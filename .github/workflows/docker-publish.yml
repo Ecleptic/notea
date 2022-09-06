@@ -23,7 +23,7 @@ jobs:
         id: meta
         uses: crazy-max/ghaction-docker-meta@v2
         with:
-          images: cinwell/notea
+          images: ecleptic/notea
           tags: |
             type=ref,event=branch
             type=ref,event=pr

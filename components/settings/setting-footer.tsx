@@ -5,7 +5,7 @@ export const SettingFooter = () => {
     <footer className="mt-20 text-center opacity-50 text-xs">
       <div>
         <a
-          href="https://github.com/qingwei-li/notea"
+          href="https://github.com/ecleptic/notea"
           target="_blank"
           rel="noreferrer"
         >
@@ -15,8 +15,8 @@ export const SettingFooter = () => {
       <div className="space-x-1">
         <span>MIT</span>
         <span>&copy;</span>
-        <a href="//github.com/qingwei-li" target="_blank" rel="noreferrer">
-          Cinwell
+        <a href="//github.com/ecleptic" target="_blank" rel="noreferrer">
+          Ecleptic
         </a>
       </div>
       <style jsx>{`

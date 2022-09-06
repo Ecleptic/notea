@@ -14,7 +14,7 @@
     "build:i18n": "node scripts/extract-i18n",
     "test": "jest"
   },
-  "repository": "QingWei-Li/notea",
+  "repository": "ecleptic/notea",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",

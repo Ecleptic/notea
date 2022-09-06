@@ -56,7 +56,7 @@ export const SnippetInjection: FC = () => {
                 'Inject analytics or other scripts into the HTML of your sharing page. '
               ) + (IS_DEMO ? t('Disable editing in the demo.') : '')}
             </span>
-            <Link href="https://github.com/QingWei-Li/notea/wiki/Snippet-Injection">
+            <Link href="https://github.com/ecleptic/notea/wiki/Snippet-Injection">
               <a target="_blank" rel="noreferrer">
                 <QuestionMarkCircleIcon className="w-4 text-gray-500 hover:text-gray-700" />
               </a>
