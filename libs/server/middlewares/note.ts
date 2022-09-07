@@ -19,7 +19,7 @@ export const applyNote: (id: string) => SSRMiddleware = (id: string) => async (
     pageMode: PageMode.NOTE,
   }
 
-  // todo 页面不存在时应该跳转到新建页
+  // TODO: When the page does not exist, it should jump to the new page
   if (!RESERVED_ROUTES.includes(id)) {
     try {
       props.note = await getNote(req.state.store, id)

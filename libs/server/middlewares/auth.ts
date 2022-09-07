@@ -47,12 +47,12 @@ export const applyRedirectLogin: (resolvedUrl: string) => SSRMiddleware = (
     permanent: false,
   }
 
-  // note 存在的情况
+  // note the presence of OR: 'situation'
   if (req.props.pageMode) {
     if (req.props.pageMode !== PageMode.PUBLIC && !req.props.isLoggedIn) {
       req.redirect = redirect
     }
-    // 访问首页没有 note，则判断是否登录
+    // Visit HomeNo note，then determine whether to log in
   } else if (!req.props.isLoggedIn) {
     req.redirect = redirect
   }

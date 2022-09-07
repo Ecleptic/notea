@@ -26,7 +26,7 @@ const onSearchLink = async (keyword: string) => {
 
   return list.map((item) => ({
     title: item.title,
-    // todo 路径
+    // todo path
     subtitle: searchRangeText({
       text: item.rawContent || '',
       keyword,

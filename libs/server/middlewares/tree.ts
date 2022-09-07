@@ -3,12 +3,12 @@ import { SSRMiddleware } from '../connect'
 export const applyTree: SSRMiddleware = async (req, res, next) => {
   let tree
 
-  // todo 分享页面获取指定树结构
+  // TODO: Share the page to get the specified tree structure
   if (req.props.isLoggedIn) {
     try {
       tree = await req.state.treeStore.get()
     } catch (error) {
-      res.APIError.NOT_FOUND.throw(error.message)
+      res.APIError.NOT_FOUND.throw(error?.message)
     }
   }
 

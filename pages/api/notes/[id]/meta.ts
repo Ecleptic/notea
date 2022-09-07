@@ -21,7 +21,7 @@ export default api()
     if (oldMeta) {
       meta = { ...oldMeta, ...meta }
 
-      // 处理删除情况
+      // Handle Deletions
       const { deleted } = req.body
       if (oldMetaJson.deleted !== deleted && deleted === NOTE_DELETED.DELETED) {
         await req.state.treeStore.removeItem(id)

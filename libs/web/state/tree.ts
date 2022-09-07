@@ -130,7 +130,7 @@ const useNoteTree = (initData: TreeModel = DEFAULT_TREE) => {
     async (id: string, data: Partial<TreeItemModel>) => {
       setTree(TreeActions.mutateItem(treeRef.current, id, data))
       delete data.data
-      // @todo diff 没有变化就不发送请求
+      // TODO: diff Do not send request without change
       if (!isEmpty(data)) {
         await mutate({
           action: 'mutate',

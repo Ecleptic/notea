@@ -16,8 +16,8 @@ import { SnackbarProvider } from 'notistack'
 import { createTheme } from '@material-ui/core/styles'
 
 const handleRejection = (event: any) => {
-  // react-beautiful-dnd 会捕获到 `ResizeObserver loop limit exceeded`
-  // 但实际这个错误对性能没有影响
+  // react-beautiful-dnd will capture `ResizeObserver loop limit exceeded`
+  // But actually this error has no impact on performance
   // see https://github.com/atlassian/react-beautiful-dnd/issues/1548
   if (/^ResizeObserver/.test(event.message)) {
     // todo catch

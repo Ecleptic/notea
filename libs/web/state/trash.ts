@@ -24,7 +24,7 @@ function useTrash() {
 
   const restoreNote = useCallback(
     async (note: NoteModel) => {
-      // 父页面被删除时，恢复页面的 parent 改成 root
+      // When the parent page is deleted, the parent of the recovery page is changed to root
       const pNote = note.pid && (await noteCache.getItem(note.pid))
       if (!note.pid || !pNote || pNote?.deleted === NOTE_DELETED.DELETED) {
         note.pid = ROOT_ID

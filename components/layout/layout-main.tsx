@@ -55,7 +55,7 @@ const MobileMainWrapper: FC = ({ children }) => {
         onClose={close}
         onOpen={open}
         hysteresis={0.4}
-        // todo 优化移动端左边按钮和滑动冲突的问题
+        // TODO Optimize the problem of the left button and sliding conflict on the mobile terminal
         disableDiscovery
       >
         <Sidebar />
