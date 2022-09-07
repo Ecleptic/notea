@@ -13,6 +13,7 @@ import { NOTE_SHARED } from 'libs/shared/meta'
 import useI18n from 'libs/web/hooks/use-i18n'
 import NavButtonGroup from './nav-button-group'
 import { EyeIcon } from '@heroicons/react/outline'
+import { settings } from 'libs/shared/settings'
 
 const MenuButton = () => {
   const { sidebar } = UIState.useContainer()
@@ -61,7 +62,7 @@ const NoteNav = () => {
 
   const handleClickOpenInTree = useCallback(() => {
     if (!note) return
-    showItem(note);
+    showItem(note)
   }, [note, showItem])
 
   return (
@@ -136,6 +137,17 @@ const NoteNav = () => {
       >
         <CircularProgress size="14px" color="inherit" />
       </div>
+      {settings?.displayWordCount && (
+        <Tooltip key={`wordcount`} title={`wordcount`}>
+          <div>
+            {/* <Link href={`/${path.id}`} shallow> */}
+            <a className="title block hover:bg-gray-200 px-1 py-0.5 rounded text-sm truncate">
+              {`wordcount`}
+            </a>
+            {/* </Link> */}
+          </div>
+        </Tooltip>
+      )}
       <HotkeyTooltip text={t('Share page')}>
         <IconButton
           onClick={handleClickShare}

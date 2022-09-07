@@ -10,7 +10,8 @@ export interface Settings {
   last_visit?: string
   locale: Locale
   injection?: string
-  editorsize: EDITOR_SIZE;
+  editorsize: EDITOR_SIZE
+  displayWordCount: boolean
 }
 
 export const DEFAULT_SETTINGS: Settings = Object.freeze({
@@ -19,6 +20,7 @@ export const DEFAULT_SETTINGS: Settings = Object.freeze({
   sidebar_is_fold: false,
   locale: Locale.EN,
   editorsize: EDITOR_SIZE.SMALL,
+  displayWordCount: false,
 })
 
 export function formatSettings(body: Record<string, any> = {}) {
@@ -60,5 +62,7 @@ export function formatSettings(body: Record<string, any> = {}) {
     settings.editorsize = body.editorsize
   }
 
-  return settings
+  if (isBoolean(body.displayWordCount)) {
+    settings.displayWordCount = body.displayWordCount
+  }
 }

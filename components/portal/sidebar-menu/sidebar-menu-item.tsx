@@ -12,6 +12,7 @@ export enum MENU_HANDLER_NAME {
   ADD_TO_FAVORITES,
   REMOVE_FROM_FAVORITES,
   TOGGLE_WIDTH,
+  DISPLAY_WORD_COUNT
 }
 
 export interface Item {
@@ -79,6 +80,14 @@ export const SidebarMenuItem = forwardRef<HTMLLIElement, ItemProps>(
       }
     }, [close, data, mutateNote, settings.editorsize])
 
+    const displayWordCount = useCallback(()=>{
+      close()
+      // TODO: Add wordcount 
+      // mutateNote(data.id, {
+      //   // displayWordCount: (resolvedNoteWidth + 1) % editorSizesCount,
+      // })
+    }, close, data, settings.displayWordCount)
+
     const MENU_HANDLER = useMemo(
       () => ({
         [MENU_HANDLER_NAME.REMOVE_NOTE]: doRemoveNote,
@@ -86,8 +95,9 @@ export const SidebarMenuItem = forwardRef<HTMLLIElement, ItemProps>(
         [MENU_HANDLER_NAME.ADD_TO_FAVORITES]: doPinned,
         [MENU_HANDLER_NAME.REMOVE_FROM_FAVORITES]: doUnpinned,
         [MENU_HANDLER_NAME.TOGGLE_WIDTH]: toggleWidth,
+        [MENU_HANDLER_NAME.DISPLAY_WORD_COUNT]: displayWordCount,
       }),
-      [doCopyLink, doPinned, doRemoveNote, doUnpinned, toggleWidth]
+      [doCopyLink, doPinned, doRemoveNote, doUnpinned, toggleWidth, displayWordCount]
     )
 
     return (

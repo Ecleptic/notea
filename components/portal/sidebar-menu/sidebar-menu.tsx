@@ -52,6 +52,11 @@ const SidebarMenu: FC = () => {
         icon: <SelectorIcon style={{ transform: "rotate(90deg)" }} />,
         handler: MENU_HANDLER_NAME.TOGGLE_WIDTH,
       },
+      {
+        text: t('Display Word Count'),
+        icon: <SelectorIcon style={{ transform: "rotate(90deg)" }} />,
+        handler: MENU_HANDLER_NAME.DISPLAY_WORD_COUNT,
+      },
     ],
     [t]
   )
